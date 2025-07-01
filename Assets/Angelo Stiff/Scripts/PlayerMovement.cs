@@ -5,6 +5,7 @@ public class PlayerMovement : MonoBehaviour
 
     public CharacterController controller;
     public float speed = 12f;
+    public float spintSpeed = 14f;
     public float gravity = -9.8f;
     public float jumpHeight = 3f;
 
@@ -15,10 +16,11 @@ public class PlayerMovement : MonoBehaviour
     public bool isDead = false;
     Vector3 velocity;
     bool isGrounded;
+    private float currentSpeed;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        currentSpeed = speed;
     }
 
     // Update is called once per frame
@@ -32,6 +34,15 @@ public class PlayerMovement : MonoBehaviour
         }
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
+
+        if (Input.GetButtonDown("Sprint"))
+        {
+            currentSpeed = spintSpeed;
+        }
+        else
+        {
+            currentSpeed = speed;
+        }
 
         Vector3 move = transform.right * x + transform.forward * z;
 
