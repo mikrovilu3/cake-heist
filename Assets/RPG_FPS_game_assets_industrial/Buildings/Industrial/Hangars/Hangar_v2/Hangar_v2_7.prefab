@@ -11,13 +11,13 @@ GameObject:
   - component: {fileID: 4000011695308040}
   - component: {fileID: 33000011149123222}
   - component: {fileID: 23000012931840882}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Hangar_v2_7_gate4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 0
 --- !u!4 &4000011695308040
 Transform:
   m_ObjectHideFlags: 0
@@ -97,13 +97,13 @@ GameObject:
   - component: {fileID: 4000011955032794}
   - component: {fileID: 33000014003885172}
   - component: {fileID: 23000013422727778}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Hangar_v2_7_gate3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 0
 --- !u!4 &4000011955032794
 Transform:
   m_ObjectHideFlags: 0
@@ -183,12 +183,12 @@ GameObject:
   - component: {fileID: 4000014162100260}
   - component: {fileID: 33000010857997036}
   - component: {fileID: 23000013882898844}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Hangar_v2_7_gate2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4000014162100260
 Transform:
@@ -269,12 +269,12 @@ GameObject:
   - component: {fileID: 4000014287333496}
   - component: {fileID: 33000012104702622}
   - component: {fileID: 23000011442212792}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Hangar_v2_7_supports
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4000014287333496
 Transform:
@@ -355,12 +355,12 @@ GameObject:
   - component: {fileID: 4000013443886618}
   - component: {fileID: 33000010833825134}
   - component: {fileID: 23000012271803398}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Hangar_v2_7_inside
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4000013443886618
 Transform:
@@ -441,12 +441,12 @@ GameObject:
   - component: {fileID: 4000012968404420}
   - component: {fileID: 33000012613047822}
   - component: {fileID: 23000012151314832}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Hangar_v2_7_door1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4000012968404420
 Transform:
@@ -527,12 +527,12 @@ GameObject:
   - component: {fileID: 4000013447336630}
   - component: {fileID: 33000014039157224}
   - component: {fileID: 23000010884104158}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Hangar_v2_7_gate1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4000013447336630
 Transform:
@@ -613,6 +613,7 @@ GameObject:
   - component: {fileID: 4000010806657880}
   - component: {fileID: 33000013096079074}
   - component: {fileID: 23000010947240236}
+  - component: {fileID: 7484640662183206971}
   m_Layer: 0
   m_Name: Hangar_v2_7
   m_TagString: Untagged
@@ -695,3 +696,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7484640662183206971
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000013235463752}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: e5c35000052d84041aac70751eee328e, type: 3}
