@@ -32,7 +32,7 @@ public class TwoDimentionalAnimatorControllerMovement : MonoBehaviour
 
         ChangeVelocity(inputZ, inputX, currentMaxVelocity);
         LockOrResetVelocity(inputZ, inputX, currentMaxVelocity);
-
+        
         // Sync velocity values with Animator
         animator.SetFloat(VelocityZHash, velocityZ);
         animator.SetFloat(VelocityXHash, velocityX);
