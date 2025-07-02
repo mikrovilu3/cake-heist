@@ -1296,7 +1296,7 @@ MonoBehaviour:
   emptyClip: {fileID: 0}
   useRaycastDamage: 1
   useVisualBullets: 1
-  bulletPrefab: {fileID: 100000, guid: 420e62b074ab91a47a0e91d82f0df470, type: 3}
+  bulletPrefab: {fileID: 4544186354686666579, guid: cfc32f6099cbe7946a503f39315f0dc8, type: 3}
   bulletSpeed: 50
   bulletCollisionLayers:
     serializedVersion: 2

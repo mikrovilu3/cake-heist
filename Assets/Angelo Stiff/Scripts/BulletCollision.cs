@@ -7,7 +7,7 @@ public class BulletCollision : MonoBehaviour
     void OnCollisionEnter(Collision other)
     {
         
-            Instantiate(impact);
+            Instantiate(impact,transform.position,new Quaternion(0,0,0,0));
             Destroy(gameObject); // ✅ Bullet disappears only when hitting valid layers
         
     }
