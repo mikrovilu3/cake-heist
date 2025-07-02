@@ -3,9 +3,12 @@
 public class BulletCollision : MonoBehaviour
 {
     public LayerMask targetLayer; // ✅ Define which layers should destroy the bullet
-
+    public GameObject impact;
     void OnCollisionEnter(Collision other)
     {
-        Destroy(gameObject); // ✅ Bullet disappears only when hitting valid layers
+        
+            Instantiate(impact,transform.position,new Quaternion(0,0,0,0));
+            Destroy(gameObject); // ✅ Bullet disappears only when hitting valid layers
+        
     }
 }
