@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
@@ -35,6 +36,16 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float patrolWaitTime = 2f;
     [SerializeField] private float walkSpeed = 3.5f;
     [SerializeField] private float runSpeed = 6f;
+     public bool useSetTargets = false;
+    [Header("Target parameters")]
+    [SerializeField] public GameObject [] targets;
+    [SerializeField] public float searchRadius = 1;
+    [SerializeField] public float semiTargetTime = 1;
+    [SerializeField] public int currentTarget = 1;
+    [SerializeField] public int patrolChangeTime = 5;
+    float atimer = 0;
+    float nextUpdateSecond = 0;
+    Vector3 randomOfSet;
 
     [Header("Audio")]
     [SerializeField] private AudioSource audioSource;
@@ -210,18 +221,48 @@ public class EnemyAI : MonoBehaviour
         if (agent == null) return;
 
         agent.speed = walkSpeed;
-
-        if (!walkPointSet)
-            SearchWalkPoint();
-
-        if (walkPointSet)
+        if (useSetTargets)
         {
-            agent.SetDestination(walkPoint);
-
-            // Check if we've reached the walk point
-            if (!agent.pathPending && agent.remainingDistance < 0.5f)
+            if (targets.Length >= 1 && targets[0] != null)
             {
-                StartCoroutine(WaitAtWalkPoint());
+                if (nextUpdateSecond == Math.Floor(Time.time))
+                {
+
+                    nextUpdateSecond = patrolChangeTime + (float)Math.Floor(Time.time);
+                    if (currentTarget == targets.Length - 1)
+                    {
+                        currentTarget = 1;
+                        // Debug.Log(" reset " + Time.time + " " + Math.Floor(Time.time) + " " + nextUpdateSecond + " " + targets.Length);
+                    }
+                    else if (currentTarget < targets.Length)
+                    {
+                        currentTarget++;
+                        // Debug.Log("iterate " + Time.time + " " + Math.Floor(Time.time) + " " + nextUpdateSecond + " " +currentTarget + " " + targets.Length + " " + Time.deltaTime);
+                    }
+                }
+                agent.destination = targets[currentTarget].transform.position + randomOfSet;
+
+            }
+            else
+            {
+                useSetTargets=false;
+            }
+        }
+        else
+        {
+
+            if (!walkPointSet)
+                SearchWalkPoint();
+
+            if (walkPointSet)
+            {
+                agent.SetDestination(walkPoint);
+
+                // Check if we've reached the walk point
+                if (!agent.pathPending && agent.remainingDistance < 0.5f)
+                {
+                    StartCoroutine(WaitAtWalkPoint());
+                }
             }
         }
     }
@@ -236,7 +277,7 @@ public class EnemyAI : MonoBehaviour
 
     private void SearchWalkPoint()
     {
-        Vector3 randomDirection = Random.insideUnitSphere * walkPointRange;
+        Vector3 randomDirection = UnityEngine.Random.insideUnitSphere * walkPointRange;
         randomDirection += transform.position;
         randomDirection.y = transform.position.y;
 
@@ -246,6 +287,12 @@ public class EnemyAI : MonoBehaviour
             walkPoint = hit.position;
             walkPointSet = true;
         }
+    }
+
+    void ReRandom()
+    {
+        randomOfSet = UnityEngine.Random.insideUnitSphere * searchRadius;
+        Invoke(nameof(ReRandom), semiTargetTime);
     }
 
     private void ChasePlayer()
