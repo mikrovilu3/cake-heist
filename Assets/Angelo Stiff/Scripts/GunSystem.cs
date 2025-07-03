@@ -135,9 +135,10 @@ public class GunSystem : MonoBehaviour
         float currentSpread = isAiming ? spread * aimSpreadReduction : spread;
         float x = Random.Range(-currentSpread, currentSpread);
         float y = Random.Range(-currentSpread, currentSpread);
+        float z = Random.Range(-currentSpread, currentSpread);
         currentDamage = isAiming ? Mathf.RoundToInt(damage * aimDamageBonus) : damage;
 
-        Vector3 direction = fpsCam.transform.forward + new Vector3(x, y, 0);
+        Vector3 direction = fpsCam.transform.forward + new Vector3(x, y, z);
 
         // RAYCAST DAMAGE (Instant hit)
         if (useRaycastDamage)
@@ -192,6 +193,7 @@ public class GunSystem : MonoBehaviour
 
         GameObject bullet = Instantiate(bulletPrefab, attackPoint.position, Quaternion.LookRotation(-direction));
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
+        bullet.GetComponent< BulletCollision >().impact = bulletHoleGraphic;
 
         if (rb != null)
         {

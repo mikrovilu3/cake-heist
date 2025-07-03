@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 5950791168794146296}
   - component: {fileID: 4075531613112011124}
   - component: {fileID: -3812205598818183609}
+  - component: {fileID: 3708153169809305553}
+  - component: {fileID: 3208334374775293946}
   m_Layer: 0
   m_Name: Rocket
   m_TagString: Untagged
@@ -114,3 +116,37 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3708153169809305553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7251361480456755256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1714b7f73321a924fb7949196bce4a0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &3208334374775293946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7251361480456755256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc8fd7c407e77cf43ac0ffaf60b1f3b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  hitEffectPrefab: {fileID: 0}
+  hitEffectLifetime: 2
+  hitSound: {fileID: 0}
