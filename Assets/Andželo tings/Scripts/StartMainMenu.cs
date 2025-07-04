@@ -34,6 +34,7 @@ public class StartMenuManager : MonoBehaviour
 
     void Start()
     {
+        UnityEngine.Cursor.lockState = CursorLockMode.Confined;
         inMenu = true;
 
         PauseMenu.SetActive(true);
