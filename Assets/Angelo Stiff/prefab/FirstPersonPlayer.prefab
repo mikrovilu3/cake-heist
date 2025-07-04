@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 1330989350837202931}
   m_Layer: 0
   m_Name: FirstPersonPlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -331,6 +331,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 7241581989439748309}
   speed: 12
+  spintSpeed: 14
   gravity: -19.6
   jumpHeight: 3
   groundCheck: {fileID: 1483027992834467836}
@@ -1060,7 +1061,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSensitivity: 500
   playerBody: {fileID: 5669469544989624861}
-  inMenu: 0
+  isInMenu: 0
 --- !u!114 &61707719572074171
 MonoBehaviour:
   m_ObjectHideFlags: 0

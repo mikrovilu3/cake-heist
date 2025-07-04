@@ -193,7 +193,8 @@ public class GunSystem : MonoBehaviour
 
         GameObject bullet = Instantiate(bulletPrefab, attackPoint.position, Quaternion.LookRotation(-direction));
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
-        bullet.GetComponent< BulletCollision >().impact = bulletHoleGraphic;
+        //Debug.Log("bulet"+bullet); 
+       // bullet.GetComponent< BulletCollision >().impact = bulletHoleGraphic;
 
         if (rb != null)
         {

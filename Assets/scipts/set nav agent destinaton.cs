@@ -20,8 +20,7 @@ public class EnemyBehavior : MonoBehaviour
     public float LowHealthThreshold = 20;
     Vector3 randomOfSet ;
     public int currentTarget = 1;
-    public GameObject health_bar;
-       Slider health_slider;
+
     public float damage=1;
     public float atackInterval =2;
     float atimer=0;
@@ -29,7 +28,6 @@ public class EnemyBehavior : MonoBehaviour
     public float atackTime = 1;
     public GameObject atackParticle;
     public GameObject dieParticle;
-    public GameObject sppiderr;
     void ReRandom()
     {
         randomOfSet = UnityEngine.Random.insideUnitSphere * searchRadius ;
@@ -37,7 +35,7 @@ public class EnemyBehavior : MonoBehaviour
     }
     Ray ray;
     void Start()
-    {   health_slider = health_bar.GetComponent<Slider>();
+    {   
         agent = GetComponent<NavMeshAgent>();
         ReRandom();
         Health = MaxHealth;
@@ -103,7 +101,7 @@ public class EnemyBehavior : MonoBehaviour
                 if (Health < 1f)
                 {
                     agent.enabled = false;
-                    sppiderr.GetComponent<Animator>().enabled = false;
+                    
                     for(int i = 0; i < 5; i++)
                     {
                         Instantiate(dieParticle, transform.position + UnityEngine.Random.insideUnitSphere, Quaternion.LookRotation(transform.position+ UnityEngine.Random.insideUnitSphere));
@@ -125,11 +123,7 @@ public class EnemyBehavior : MonoBehaviour
 
         Debug.Log("tok damage");
         Health -= damage;
-        if (health_slider != null)
-        {
-            health_slider.value = Health;
-        }
-        else { Debug.LogError("health slider is null"); }
+        
     }
     void EndAtack() {
         IsAtacking = false;
