@@ -7,15 +7,17 @@ public class MouseLook : MonoBehaviour
     public Transform playerBody;
     float xRotation = 0f;
     public bool isInMenu = false;
+    private MenuManager menu;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        menu = GameObject.Find("Canvases").GetComponent<MenuManager>(); 
     }
 
     // Update is called once per frame
     void Update()
-    {
+    {   
+        
         if (isInMenu) 
         {
             Cursor.lockState = CursorLockMode.Confined;

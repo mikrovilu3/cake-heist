@@ -23,7 +23,7 @@ public class MenuManager : MonoBehaviour
     [Header("Canvas")]
     public GameObject PauseMenu;
     public GameObject SettingsMenu;
-    public GameObject InfoPanel;
+
 
     private bool inMenu = false;
     private bool onSettings = false;
@@ -35,7 +35,7 @@ public class MenuManager : MonoBehaviour
 
     void Start()
     {
-        InfoPanel.SetActive(true);
+        
         PauseMenu.SetActive(false);
         SettingsMenu.SetActive(false);
 
@@ -85,7 +85,7 @@ public class MenuManager : MonoBehaviour
 
     public void BackToStartMenu()
     {
-        SceneManager.LoadScene("Main Menu");
+        SceneManager.LoadScene("StartMenu");
     }
     public void BackToMainMenu()
     {
@@ -144,7 +144,7 @@ public class MenuManager : MonoBehaviour
     public void BackToGame()
     {
         inMenu = false;
-        InfoPanel.SetActive(true);
+        
         SettingsMenu.SetActive(false);
         PauseMenu.SetActive(false);
     }
@@ -155,8 +155,8 @@ public class MenuManager : MonoBehaviour
         if (Input.GetKey(KeyCode.Tab))
         {
             inMenu = true;
-
-            InfoPanel.SetActive(false);
+            
+            
             PauseMenu.SetActive(true);
             SettingsMenu.SetActive(false);
         }
