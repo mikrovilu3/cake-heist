@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/TirgamesAssets/Factory/Scenes/FactoryDay.unity
     guid: 3695dfa29624f624fab36780384e3387
+  - enabled: 1
+    path: Assets/Scenes/End.unity
+    guid: a9ac8580c75fbb44b8b6e5c92c700e2e
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
