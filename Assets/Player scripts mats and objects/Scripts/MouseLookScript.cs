@@ -6,7 +6,7 @@ public class MouseLookScript : MonoBehaviour
     public float mouseSensitivity = 100f;
     public float controllerSensitivity = 150f; // Tweak as needed for controller look speed
     public Transform playerBody;
-    public bool inMenu = false;
+    public bool isInMenu = false;
 
     public Animator animator;
 
@@ -38,7 +38,7 @@ public class MouseLookScript : MonoBehaviour
         if (totalX > 0.01f) turnInput = 1f;
         else if (totalX < -0.01f) turnInput = -1f;
 
-        if (inMenu)
+        if (isInMenu)
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
