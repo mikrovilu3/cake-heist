@@ -18,6 +18,10 @@ public class PropellerSpin : MonoBehaviour
     void Update()
     {
         Spin();
+        currentRotationX = transform.localRotation.x;
+        currentRotationY = transform.localRotation.y;
+        currentRotationZ = transform.localRotation.z;
+
     }
 
     public void Spin()
